@@ -26,9 +26,11 @@ function solve ({ a, replace }) {
 
 function newSolve({ a, replace }) {
     const aStr = a.toString();
-    return aStr.split('').reduce((r, c, i) => {
-        const cStr = aStr.slice(0,i) + replace(c) + aStr.slice(i + 1);
-        const cNum = parseInt(cStr, 10);
-        return cNum < r ? cNum : r;
-    }, a)
+    return aStr
+        .split('')
+        .reduce((r, c, i) => {
+            const cStr = aStr.slice(0,i) + replace(c) + aStr.slice(i + 1);
+            const cNum = parseInt(cStr, 10);
+            return cNum < r ? cNum : r;
+        }, a)
 }
